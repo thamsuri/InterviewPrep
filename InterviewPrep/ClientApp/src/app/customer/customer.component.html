@@ -1,0 +1,29 @@
+<h1>Customers</h1>
+
+<p>This is a simple example of an Angular component.</p>
+
+<p aria-live="polite">Current count: <strong>{{ currentCount }}</strong></p>
+
+<button class="btn btn-primary" (click)="incrementCounter()">Increment</button>
+<button pButton type="button" label="Click" (click)="incrementCounter()" ></button>
+
+<p *ngIf="!customers"><em>Loading...</em></p> 
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="customers">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Photo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let customer of customers">
+      <td>{{ customer.name.first }}</td>
+      <td>{{ customer.email }}</td>
+      <td>{{ customer.phone }}</td>
+      <td><img class="images" src={{customer.picture.thumbnail}} /></td>
+    </tr>
+  </tbody>
+</table>
